@@ -1,0 +1,31 @@
+{
+    "name": "Work Tools Grupo Cavalcante",
+    "description": "Ferramentas para otimização de trabalho",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "permissions": ["storage", "scripting", "activeTab"],
+
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon48.png"
+    },
+
+    "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  }
+}

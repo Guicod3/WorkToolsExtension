@@ -1,13 +1,16 @@
-chrome.commands.onCommand.addListener(async (command) => {
-    if (command === "execute_action") {
-        const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+document.getElementById('toFill').addEventListener('click', async () => {
+    start()
+})
 
-        chrome.scripting.executeScript({
-            target: {tabId: tab.id},
-            function: preencherCampos,
-        });
-    }
-  });
+
+async function start(){
+    const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+
+    chrome.scripting.executeScript({
+        target: {tabId: tab.id},
+        function: preencherCampos,
+    })
+} 
 
 function preencherCampos(){
     const lista = document.querySelectorAll('#listaAtributosProdutoMapeamento tr')
@@ -17,3 +20,5 @@ function preencherCampos(){
         CampoParaPreencher.value = ValorParaCopiar
     })
 }
+
+
